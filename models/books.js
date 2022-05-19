@@ -8,7 +8,7 @@ const bookSchema = new Schema({
     description: String,
     year: Number,
     quantity: Number,
-    imageURL: String,
+    imageURL: String
 })
 
 // MODEL AND EXPORT
