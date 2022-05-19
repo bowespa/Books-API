@@ -1,12 +1,14 @@
 // DEPENDENCIES
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 // CONFIG & MIDDLEWARE
 require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 // MONGOOSE
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
