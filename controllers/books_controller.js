@@ -33,12 +33,17 @@ books.get('/seed', (req, res) => {
         "quantity": 4,
         "imageURL": "https://imgur.com/qYLKtPH.jpeg"
     }])
-        .then(res.status(200).json({
-            message: 'Seed successful'
-        }))
-        .catch(res.status(400).json({
-            message: 'Seed unsuccessful'
-        }))
+        .then(() => {
+            res.status(200).json({
+                message: 'Seed successful'
+            })
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(400).json({
+                message: 'Seed unsuccessful'
+            })
+        })
 })
 
 
